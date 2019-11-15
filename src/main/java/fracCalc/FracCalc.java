@@ -7,16 +7,16 @@ package fracCalc;
 import java.util.Scanner;
 
 public class FracCalc {
-	static String whole1s = "";
-	static String numerator1s = "";
-	static String denominator1s = "";
+	static String w1s = "";
+	static String n1s = "";
+	static String d1s = "";
 
-	static String whole2s = "";
-	static String numerator2s = "";
-	static String denominator2s = "";
+	static String w2s = "";
+	static String n2s = "";
+	static String d2s = "";
 
-	static String fraction2 = "";
-	static String fraction1 = "";
+	static String f2 = "";
+	static String f1 = "";
 	static String operator = "";
 
 	public static void main(String[] args) {
@@ -51,44 +51,47 @@ public class FracCalc {
 	// e.g. return ==> "1_1/4"
 	public static String produceAnswer(String input) {
 		// TODO: Implement this function to produce the solution to the input
-		fraction2 = processFractions(input);
-		return fraction2;
+		String valOfProcessedFrac = processFractions(input);
+		return valOfProcessedFrac;
 	}
 
 	public static String processFractions(String input) {
-		fraction1 = input.substring(0, input.indexOf(" "));
-		System.out.println("fraction1: " + fraction1);
+		f1 = input.substring(0, input.indexOf(" "));
+		System.out.println("fraction1: " + f1);
 		operator = input.substring(input.indexOf(" ") + 1, input.indexOf(" ") + 2);
 		System.out.println("operator: " + operator);
-		fraction2 = input.substring(input.indexOf(" ") + 3);
-		System.out.println("fraction2: " + fraction2);
-		whole1s = fraction1;
-		numerator1s = "0";
-		denominator1s = "1";
-		if (fraction1.indexOf("/") != -1) {
-			if (fraction1.indexOf("_") != -1) {
-				fraction1.substring(0, input.indexOf("_"));
+		f2 = input.substring(input.indexOf(" ") + 3);
+		System.out.println("fraction2: " + f2);
+		w1s = f1;
+		n1s = "0";
+		d1s = "1";
+		if (f1.indexOf("/") != -1) {
+			if (f1.indexOf("_") != -1) {
+				f1.substring(0, input.indexOf("_"));
 			} else {
-				whole1s = "0";
+				w1s = "0";
 			}
-			numerator1s = fraction1.substring(fraction1.indexOf("_") + 1, fraction1.indexOf("/"));
-			denominator1s = fraction1.substring(fraction1.indexOf("/") + 1, fraction1.length());
+			n1s = f1.substring(f1.indexOf("_") + 1, f1.indexOf("/"));
+			d1s = f1.substring(f1.indexOf("/") + 1, f1.length());
 
 		}
-		whole2s = fraction2;
-		numerator2s = "0";
-		denominator2s = "1";
-		if (fraction2.indexOf("/") != -1) {
-			if (fraction2.indexOf("_") != -1) {
-				whole2s = fraction2.substring(0, fraction2.indexOf("_"));
+		w2s = f2;
+		n2s = "0";
+		d2s = "1";
+		if (f2.indexOf("/") != -1) {
+			if (f2.indexOf("_") != -1) {
+				w2s = f2.substring(0, f2.indexOf("_"));
 			} else {
-				whole2s = "0";
+				w2s = "0";
 			}
-			numerator2s = fraction2.substring(fraction2.indexOf("_") + 1, fraction2.indexOf("/"));
-			denominator2s = fraction2.substring(fraction2.indexOf("/") + 1, fraction2.length());
+			n2s = f2.substring(f2.indexOf("_") + 1, f2.indexOf("/"));
+			d2s = f2.substring(f2.indexOf("/") + 1, f2.length());
 		}
-		int numerator2 = Integer.parseInt(numerator2s);
-		return fraction2;
+		int n2 = Integer.parseInt(n2s);
+		int d2 = Integer.parseInt(d2s);
+		int w2 = Integer.parseInt(w2s);
+		String returnThis = "whole:" + w2 + " numerator:" + n2 + " denominator:" + d2;
+		return returnThis;
 
 	}
 
