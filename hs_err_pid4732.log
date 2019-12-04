@@ -1,0 +1,176 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=4732, tid=0x00000000000044f0
+#
+# JRE version:  (8.0_221-b11) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.221-b11 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000004042800):  JavaThread "Unknown thread" [_thread_in_vm, id=17648, stack(0x0000000003290000,0x0000000003390000)]
+
+Stack: [0x0000000003290000,0x0000000003390000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000004042800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=17648, stack(0x0000000003290000,0x0000000003390000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000c2200000, size: 990 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 18432K, used 317K [0x00000000eb600000, 0x00000000eca80000, 0x0000000100000000)
+  eden space 15872K, 2% used [0x00000000eb600000,0x00000000eb64f5d0,0x00000000ec580000)
+  from space 2560K, 0% used [0x00000000ec800000,0x00000000ec800000,0x00000000eca80000)
+  to   space 2560K, 0% used [0x00000000ec580000,0x00000000ec580000,0x00000000ec800000)
+ ParOldGen       total 42496K, used 0K [0x00000000c2200000, 0x00000000c4b80000, 0x00000000eb600000)
+  object space 42496K, 0% used [0x00000000c2200000,0x00000000c2200000,0x00000000c4b80000)
+ Metaspace       used 752K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 76K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000013500000,0x00000000136f0000] byte_map_base: 0x0000000012eef000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006e7b5ce0
+ Begin Bits: [0x0000000013c40000, 0x0000000014bb8000)
+ End Bits:   [0x0000000014bb8000, 0x0000000015b30000)
+
+Polling page: 0x00000000016c0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000004140000, 0x00000000043b0000, 0x0000000013140000]
+ total_blobs=58 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.063 loading class java/lang/Short
+Event: 0.063 loading class java/lang/Short done
+Event: 0.063 loading class java/lang/Integer
+Event: 0.063 loading class java/lang/Integer done
+Event: 0.063 loading class java/lang/Long
+Event: 0.064 loading class java/lang/Long done
+Event: 0.065 loading class java/lang/NullPointerException
+Event: 0.065 loading class java/lang/NullPointerException done
+Event: 0.065 loading class java/lang/ArithmeticException
+Event: 0.065 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff785940000 - 0x00007ff785977000 	C:\ProgramData\App-V\6AE3AD88-B50E-407E-AEF5-028480609612\E4612E72-D3D2-4161-85BE-3C0C4851F5A7\Root\VFS\ProgramFilesX64\eclipse\jre\bin\javaw.exe
+0x00007ff81fe00000 - 0x00007ff81ffed000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff81e1e0000 - 0x00007ff81e293000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff81cd80000 - 0x00007ff81d013000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fffe7300000 - 0x00007fffe7520000 	C:\Windows\System32\AppVEntSubsystems64.dll
+0x00007ff81e730000 - 0x00007ff81e7d3000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff81d020000 - 0x00007ff81d0be000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff81e010000 - 0x00007ff81e0ae000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff81db60000 - 0x00007ff81dc82000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff81d9b0000 - 0x00007ff81db47000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff81bec0000 - 0x00007ff81bee0000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff81df40000 - 0x00007ff81df69000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff81cb00000 - 0x00007ff81cc99000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff81bee0000 - 0x00007ff81bf80000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff81bf80000 - 0x00007ff81c07a000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff81d0c0000 - 0x00007ff81d215000 	C:\WINDOWS\System32\ole32.dll
+0x00007ff81e2a0000 - 0x00007ff81e5cc000 	C:\WINDOWS\System32\combase.dll
+0x00007ff81cca0000 - 0x00007ff81cd1e000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff81e800000 - 0x00007ff81fcf4000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ff81c0a0000 - 0x00007ff81c0ea000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007ff81e680000 - 0x00007ff81e728000 	C:\WINDOWS\System32\shcore.dll
+0x00007ff81c380000 - 0x00007ff81cacd000 	C:\WINDOWS\System32\windows.storage.dll
+0x00007ff81be70000 - 0x00007ff81be94000 	C:\WINDOWS\System32\profapi.dll
+0x00007ff81be10000 - 0x00007ff81be6d000 	C:\WINDOWS\System32\powrprof.dll
+0x00007ff81d950000 - 0x00007ff81d9a2000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ff81bdf0000 - 0x00007ff81be01000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007ff81c080000 - 0x00007ff81c097000 	C:\WINDOWS\System32\cryptsp.dll
+0x00007ff81bcf0000 - 0x00007ff81bd18000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ff810240000 - 0x00007ff81024a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff8069c0000 - 0x00007ff806c39000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17763.802_none_05b1445c0722d2cc\COMCTL32.dll
+0x00007ff81df70000 - 0x00007ff81df9e000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff81d880000 - 0x00007ff81d944000 	C:\WINDOWS\System32\oleaut32.dll
+0x000000006f650000 - 0x000000006f722000 	C:\ProgramData\App-V\6AE3AD88-B50E-407E-AEF5-028480609612\E4612E72-D3D2-4161-85BE-3C0C4851F5A7\Root\VFS\ProgramFilesX64\eclipse\jre\bin\msvcr100.dll
+0x000000006df90000 - 0x000000006e835000 	C:\ProgramData\App-V\6AE3AD88-B50E-407E-AEF5-028480609612\E4612E72-D3D2-4161-85BE-3C0C4851F5A7\Root\VFS\ProgramFilesX64\eclipse\jre\bin\server\jvm.dll
+0x00007ff81db50000 - 0x00007ff81db58000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff806040000 - 0x00007ff806049000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff81d6a0000 - 0x00007ff81d70d000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff819860000 - 0x00007ff819884000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff819830000 - 0x00007ff81985d000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ff817f10000 - 0x00007ff817f1f000 	C:\ProgramData\App-V\6AE3AD88-B50E-407E-AEF5-028480609612\E4612E72-D3D2-4161-85BE-3C0C4851F5A7\Root\VFS\ProgramFilesX64\eclipse\jre\bin\verify.dll
+0x00007ff80ae10000 - 0x00007ff80ae39000 	C:\ProgramData\App-V\6AE3AD88-B50E-407E-AEF5-028480609612\E4612E72-D3D2-4161-85BE-3C0C4851F5A7\Root\VFS\ProgramFilesX64\eclipse\jre\bin\java.dll
+0x00007ff812820000 - 0x00007ff812836000 	C:\ProgramData\App-V\6AE3AD88-B50E-407E-AEF5-028480609612\E4612E72-D3D2-4161-85BE-3C0C4851F5A7\Root\VFS\ProgramFilesX64\eclipse\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: fracCalc.FracCalc
+java_class_path (initial): C:\Users\s-murthys\git\fractioncalculator-SaiMurthy\bin;C:\Users\s-murthys\git\fractioncalculator-SaiMurthy\lib\checkstyle-8.13-all.jar;C:\Users\s-murthys\git\fractioncalculator-SaiMurthy\lib\FracCalcTestHelper.jar;C:\Users\s-murthys\git\fractioncalculator-SaiMurthy\lib\hamcrest-core-1.3.jar;C:\Users\s-murthys\git\fractioncalculator-SaiMurthy\lib\junit-4.11.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/ProgramData/App-V/6AE3AD88-B50E-407E-AEF5-028480609612/E4612E72-D3D2-4161-85BE-3C0C4851F5A7/Root/VFS/ProgramFilesX64/eclipse/jre/bin/server;C:/ProgramData/App-V/6AE3AD88-B50E-407E-AEF5-028480609612/E4612E72-D3D2-4161-85BE-3C0C4851F5A7/Root/VFS/ProgramFilesX64/eclipse/jre/bin;C:/ProgramData/App-V/6AE3AD88-B50E-407E-AEF5-028480609612/E4612E72-D3D2-4161-85BE-3C0C4851F5A7/Root/VFS/ProgramFilesX64/eclipse/jre/lib/amd64;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\s-murthys\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\eclipse;
+USERNAME=s-murthys
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17763 (10.0.17763.475)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 142 stepping 10, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 4050360k(362812k free), swap 16633272k(5988k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.221-b11) for windows-amd64 JRE (1.8.0_221-b11), built on Jul  4 2019 04:39:29 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon Dec 02 23:09:58 2019
+timezone: Pacific Standard Time
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
