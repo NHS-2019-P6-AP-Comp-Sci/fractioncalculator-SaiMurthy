@@ -17,20 +17,12 @@ public class FracCalc {
 			if (userInput.nextLine() == "quit") {
 				test = true;
 			}
-			// TODO: Read the input from the user and call produceAnswer with an equation
 		}
 		userInput.close();
 	}
 	// ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
 	// This function takes a String 'input' and produces the result
-	//
-	// input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
-	//      e.g. input ==> "1/2 + 3/4"
-	//        
-	// The function should return the result of the fraction after it has been calculated
-	//      e.g. return ==> "1_1/4"
 	public static String produceAnswer(String input){ 
-		// TODO: Implement this function to produce the solution to the input
 		String[] array = input.split(" ");
 		String firstOperand = array[0];
 		String operator = array[1];
@@ -87,7 +79,6 @@ public class FracCalc {
 		}
 		return(firstNumerator + "/" + Math.abs(commonDenominator));
 	}
-	// TODO: Fill in the space below with any helper methods that you think you will need
 	public static String toImproperFracString(String input) {
 		int numerator = 0;
 		int denominator = 1;
@@ -129,6 +120,7 @@ public class FracCalc {
 		}
 		return ("error");
 	}
+	// finds the greatest common factor
 	public static int gcf(int num1, int num2) {
 		int answer = 1;
 		for (int i = min(num1,num2); i > 0; i --) {
@@ -140,6 +132,7 @@ public class FracCalc {
 		}
 		return answer;
 	}
+	// returns the minimum number
 	public static int min(int num1, int num2) {
 		if (num1 < num2) {
 			return num1;
@@ -148,6 +141,7 @@ public class FracCalc {
 			return num2;
 		}
 	}
+	//returns the max number
 	public static double max(int num1, int num2) {
 		if (num1 > num2) {
 			return num1;
